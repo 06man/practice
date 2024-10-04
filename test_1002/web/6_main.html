@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>로그인</title>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // 기본 제출 동작 방지
+            
+            // 여기서 로그인 검증 로직을 추가할 수 있습니다.
+            // 로그인 성공 시 6_main.html로 리디렉션
+            window.location.href = '6_main.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container login-page">
+        <h1>로그인</h1>
+        <form onsubmit="handleLogin(event)">
+            <input type="email" placeholder="이메일" required>
+            <input type="password" placeholder="패스워드" required>
+            <button type="submit">로그인</button>
+        </form>
+        <p class="alternative">계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+    </div>
+</body>
+</html>

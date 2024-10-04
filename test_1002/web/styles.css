@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('zeri.gif') no-repeat center center fixed; /* 배경으로 zeri.gif 이미지 설정 */
+    background-size: cover; /* 배경 이미지가 화면 크기에 맞게 조정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 사용 */
+    margin: 0;
+}
+
+.container {
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.9); /* 반투명 흰색 배경 */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 중앙 정렬 */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #0095f6;
+    box-shadow: 0 0 5px rgba(0, 149, 246, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007bbf;
+}
+
+p {
+    margin-top: 15px;
+}
+
+.alternative {
+    margin-top: 20px;
+}
+
+a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
