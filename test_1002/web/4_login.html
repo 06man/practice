@@ -15,6 +15,8 @@
             <button type="submit">로그인</button>
         </form>
         <p class="alternative">계정이 없으신가요? <a href="5_join.html">회원가입</a></p>
+        <!-- 돌아가기 버튼 추가 -->
+        <button onclick="goToIndex()">돌아가기</button>
     </div>
 
     <script>
@@ -32,6 +34,10 @@
                 // 로그인 실패 시 경고 메시지
                 alert("이메일 또는 비밀번호가 틀렸습니다.");
             }
+        }
+
+        function goToIndex() {
+            window.location.href = "index.html"; // index.html로 돌아가기
         }
     </script>
 </body>

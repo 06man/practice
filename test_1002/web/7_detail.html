@@ -5,32 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>상세 프로필</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h2 {
+            margin: 10px 0;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3897f0;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .posts-container {
+            margin-top: 30px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .post img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .post p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .delete-button {
+            background-color: red;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container detailed-profile">
         <h1>상세 프로필</h1>
         <div class="profile-header">
-            <img src="profile-pic.jpg" alt="프로필 사진" class="profile-pic">
+            <img src="" alt="프로필 사진" id="profile-pic" class="profile-pic">
             <div class="profile-info">
-                <h2>사용자이름</h2>
-                <p>이메일: 사용자이메일@example.com</p>
-                <button onclick="alert('로그아웃 되었습니다.');">로그아웃</button>
+                <h2 id="profile-name">사용자이름</h2>
+                <p id="profile-bio">사용자 설명</p>
+                <button onclick="logout()">로그아웃</button>
+                <button onclick="addPost()">게시물 추가하기</button>
             </div>
         </div>
-        <h3>게시물</h3>
-        <div class="posts">
-            <div class="post">
-                <img src="post1.jpg" alt="게시물 1">
-            </div>
-            <div class="post">
-                <img src="post2.jpg" alt="게시물 2">
-            </div>
-            <div class="post">
-                <img src="post3.jpg" alt="게시물 3">
-            </div>
-            <!-- 추가 게시물 -->
+        <p><a href="6_main.html">프로필 다시 수정하기</a></p>
+
+        <!-- 게시물 목록 -->
+        <div class="posts-container" id="posts-container">
+            <h3>게시물 목록</h3>
         </div>
-        <p><a href="profile.html">뒤로 가기</a></p>
     </div>
+
+    <script>
+        // 저장된 프로필 정보를 불러오기
+        window.onload = function() {
+            const name = localStorage.getItem("profileName");
+            const bio = localStorage.getItem("profileBio");
+            const profilePic = localStorage.getItem("profilePic");
+
+            if (name) {
+                document.getElementById("profile-name").innerText = name;
+            }
+            if (bio) {
+                document.getElementById("profile-bio").innerText = bio;
+            }
+            if (profilePic) {
+                document.getElementById("profile-pic").src = profilePic;
+            }
+
+            loadPosts();
+        }
+
+        function logout() {
+            // 로그아웃 시 4_login.html로 이동
+            window.location.href = '4_login.html';
+        }
+
+        function addPost() {
+            // 게시물 추가하기 페이지로 이동
+            window.location.href = 'add_post.html';
+        }
+
+        function loadPosts() {
+            // 로컬 스토리지에서 저장된 게시물 목록을 불러옴
+            const postsContainer = document.getElementById("posts-container");
+            const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+            postsContainer.innerHTML = ""; // 기존 내용을 초기화
+
+            if (posts.length === 0) {
+                postsContainer.innerHTML += "<p>아직 게시물이 없습니다.</p>";
+            } else {
+                posts.forEach((post, index) => {
+                    const postElement = document.createElement("div");
+                    postElement.classList.add("post");
+
+                    const postImage = document.createElement("img");
+                    postImage.src = post.image;
+                    postImage.alt = `게시물 ${index + 1}`;
+
+                    const postCaption = document.createElement("p");
+                    postCaption.innerText = post.caption;
+
+                    // 삭제 버튼 생성
+                    const deleteButton = document.createElement("button");
+                    deleteButton.innerText = "삭제";
+                    deleteButton.classList.add("delete-button");
+                    deleteButton.onclick = function() {
+                        deletePost(index);
+                    };
+
+                    postElement.appendChild(postImage);
+                    postElement.appendChild(postCaption);
+                    postElement.appendChild(deleteButton);
+                    postsContainer.appendChild(postElement);
+                });
+            }
+        }
+
+        function deletePost(index) {
+            const posts = JSON.parse(localStorage.getItem("posts")) || [];
+            posts.splice(index, 1); // 해당 인덱스의 게시물 삭제
+            localStorage.setItem("posts", JSON.stringify(posts)); // 로컬 스토리지에 업데이트
+            loadPosts(); // 게시물 목록 새로 고침
+        }
+    </script>
 </body>
 </html>

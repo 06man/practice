@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>게시물 추가하기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input[type="file"], input[type="text"], textarea {
+            width: calc(100% - 20px); /* 100% - padding */
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: none; /* 크기 조절을 불가능하게 함 */
+            height: 80px; /* 고정 높이 설정 */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* 버튼과 입력란 사이에 간격 추가 */
+        }
+
+        .url-input {
+            margin-bottom: 10px;
+        }
+
+        #image-preview {
+            margin-top: 20px;
+            max-width: 100%; /* 최대 폭 설정 */
+            border-radius: 10px;
+            display: none; /* 기본적으로 숨김 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>게시물 추가하기</h1>
+
+        <!-- 파일 업로드 옵션 -->
+        <h3>파일 선택하기</h3>
+        <input type="file" id="post-image" accept="image/*">
+
+        <!-- URL 추가 옵션 -->
+        <h3>URL 입력하기</h3>
+        <input type="text" id="image-url" class="url-input" placeholder="이미지 URL을 입력하세요." oninput="previewImage()">
+
+        <!-- 미리보기 이미지 -->
+        <img id="image-preview" alt="이미지 미리보기">
+
+        <!-- 설명란 -->
+        <textarea id="post-caption" rows="3" placeholder="게시물 설명 입력"></textarea>
+        
+        <button id="save-post-button">게시물 저장</button>
+        <button id="back-button" onclick="goBack()">돌아가기</button> <!-- 돌아가기 버튼 추가 -->
+    </div>
+
+    <script>
+        // URL을 입력할 때 이미지 미리보기
+        function previewImage() {
+            const urlInput = document.getElementById("image-url").value;
+            const previewImage = document.getElementById("image-preview");
+            if (urlInput) {
+                previewImage.src = urlInput; // URL을 이미지 소스로 설정
+                previewImage.onload = function() {
+                    previewImage.style.display = 'block'; // 이미지가 로드되면 보이게 함
+                }
+                previewImage.onerror = function() {
+                    previewImage.style.display = 'none'; // 이미지 로드 실패 시 숨김
+                }
+            } else {
+                previewImage.style.display = 'none'; // URL이 없을 때 숨김
+            }
+        }
+
+        document.getElementById("save-post-button").onclick = function() {
+            const inputFile = document.getElementById("post-image");
+            const inputUrl = document.getElementById("image-url").value;
+            const caption = document.getElementById("post-caption").value;
+
+            let imgSrc;
+
+            if (inputFile.files && inputFile.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imgSrc = e.target.result; // Base64 데이터
+                    savePost(imgSrc, caption);
+                };
+                reader.readAsDataURL(inputFile.files[0]); // 이미지 파일을 Base64로 읽기
+            } else if (inputUrl) {
+                imgSrc = inputUrl; // URL을 이미지 소스로 사용
+                savePost(imgSrc, caption);
+            } else {
+                alert("이미지를 선택하거나 URL을 입력해주세요.");
+                return;
+            }
+        };
+
+        function savePost(imgSrc, caption) {
+            const newPost = {
+                image: imgSrc,
+                caption: caption
+            };
+
+            // 기존 게시물 목록을 가져오고, 새 게시물을 추가
+            const posts = JSON.parse(localStorage.getItem("posts")) || [];
+            
+            // 저장할 최대 게시물 수를 정함 (예: 10개)
+            const maxPosts = 10;
+            if (posts.length >= maxPosts) {
+                // 가장 오래된 게시물 제거
+                posts.shift(); // 첫 번째 게시물 삭제
+            }
+
+            posts.push(newPost); // 새로운 게시물 추가
+            localStorage.setItem("posts", JSON.stringify(posts)); // 게시물 저장
+
+            alert("게시물이 저장되었습니다.");
+            window.location.href = '7_detail.html'; // 게시물 추가 후 상세 프로필로 이동
+        }
+
+        function goBack() {
+            window.location.href = '7_detail.html'; // 7_detail.html로 돌아가기
+        }
+    </script>
+</body>
+</html>
