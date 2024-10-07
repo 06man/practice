@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("hello world")
+
+
+    </script>
+
+    <h1>JavaScript</h1>
+    <script>
+        document.write(1 + 1);
+    </script>
+    <h1>html</h1>
+    1+1
+    <div>
+        <input type="button" value="hi" onclick="alert('오늘 점심 뭐 먹죠?');" )>
+    </div>
+    <input type="text" onchange="alert('changed')">
+    <input id="test1" placeholder="Click here, then press down a key." size="40" />
+    <p id="log"></p>
+    <script>
+    const input = document.querySelector("#test1");
+        const log = document.getElementById("log");
+
+        input.addEventListener("keydown", logKey);
+
+        function logKey(e) {
+            log.textContent += ` ${e.code}`;
+        }</script>
+            <input id="ID" type="text" placeholder="ID">
+            <input id="PASSWORD" type="text" placeholder="PASSWORD">
+            <input type="button" value="로그인" onclick="showUser()">
+            <p id="result"></p>
+            <script>
+                 function showUser() {
+                     const ID = document.getElementById("ID").value
+                     const PASSWORD = document.getElementById("PASSWORD").value;
+                     alert ("아이디: "+ID + ", 패스워드:" + PASSWORD)
+                    document.getElementById("result").innerText="아이디: "+ID + ", 패스워드:" + PASSWORD
+                 }
+                 
+                
+            </script>
+                        <input id="lunch" type="text" placeholder="점심">
+                        <input type="button" value="출력" onclick="Lunch()">
+            <h1 id="resultmenu"></h1>
+            <script>
+                function Lunch() {
+                    const lunch = document.getElementById("lunch").value
+                    alert ("메뉴: "+lunch)
+                    document.getElementById("resultmenu").innerText="점심 : "+lunch
+                 }
+            </script>
+</body>
+</html>
