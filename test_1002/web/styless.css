@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+    h1 {      
+        font-family: "Jua", sans-serif;
+        padding:10px;
+        background-color:#222;
+        color:#fff;
+      }
+
+      #container1 {
+        width: 400px;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid green;
+
+      }
+      .accent {
+        border: 1px solid black;
+        padding: 5px;
+      }
+      .bg {
+        background-color: blueviolet;
+      }
+      
+      .fc{
+        font-family: "Jua", sans-serif;
+        font-size: 150%;
+        font-weight: 300px;
+      }
+      .shadow1 {
+        color:black;
+      text-shadow:5px 5px 3px blue;
+      font-size: 40px;
+      font-family: "Jua", sans-serif;
+      }
+      .center {
+        text-align: center;
+      }
+      .justify {
+        text-align: justify;
+      }
+      
+      .box1{
+        width: 50%;
+        height: 100px;
+        border: 10px solid #ccc;
+        padding: 40px;
+        display:inline-block;
+        border-radius: 20px;
+        border-style: groove;
+        border-left-color: aqua;
+        border-right-color: red;
+        border-bottom-color: pink;
+        border-top-color:black;
+      }
+      .box3{
+      float:left;
+      border:1px solid #222;
+      width:300px;
+      height:300px;      
+      margin:20px;
+      background:url('zeri.gif') no-repeat left top;}
+img {float: right;
+margin-right: 40px;}
+
+#pos1 {
+    position:absolute;
+    bottom: 1px;
+    right: 1px;
+}
+#fixed {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+}
+#static {
+    width:200px;
+      height:200px;
+      background-color:#eee;
+      border:1px solid #ccc;
+      line-height:2;
+      position:static;
+    }
+    #relative-1{
+      position:relative;
+      width:200px;
+      height:200px;
+      background-color:#eee;
+      border:1px solid #ccc;
+      line-height:2;
+    }
+    #relative-2 {
+      position:relative; 
+      width:200px;
+      height:200px;
+      background-color:#eee;
+      border:1px solid #ccc;
+      line-height:2;  /* 포지셔닝 - relative */
+      left:100px;  /* 왼쪽에서 100px 떨어지게 */
+      top:-50px;   /* 위쪽에서 -50px 떨어지게 (위로 이동) */
+    }
+    body {
+      background-image :url('image3.png');
+      background-repeat: repeat;
+      background-attachment:fixed;
+    }
+    #bg1 { background-size:auto;}  /* 원래 배경 이미지 크기로 표시 */
+    #bg2 { background-size:200px;}  /* 너비는 200px, 높이는 자동 계산 */
+    #bg3 { background-size:50%;}  /* 배경 이미지 너비는 요소 너비의 50%, 높이는 자동 계산 */
+    #bg4 { background-size:100% 100%;}  /* 배경 이미지 너비와 높이는 요소 너비의 100%, 요소 높이의 100% */ 
+    #bg5 { background-size:contain;}  /* 요소 안에 배경 이미지가 다 보이도록 표시 */
+    #bg6 { background-size:cover;}  
+    #container{
+      width:1100px;
+      margin:50px auto;}
