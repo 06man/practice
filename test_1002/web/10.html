@@ -1,233 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-            body {
-      background-color:#eee;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #eee;
     }
+
     section {
-      width:600px;
-      margin:20px auto;
+      width: 600px;
+      margin: 20px auto;
     }
+
     p {
-      width:500px;
-      padding:10px;
-      background-color:#fff;
-      border:1px solid #ccc;
-      line-height:2;
+      width: 500px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      line-height: 2;
     }
-   section p {  /* section 요소의 모든 하위 p 요소에 적용 */
-      color:blue;   /* 글자색을 파란색으로 */
-    }
-    h1 + p {
 
-        background-color: #222;
-        color: #fff;
+    section p {
+      /* section 요소의 모든 하위 p 요소에 적용 */
+      color: blue;
+      /* 글자색을 파란색으로 */
+    }
+
+    h1+p {
+
+      background-color: #222;
+      color: #fff;
 
     }
-    h1 ~ p {
-        color: aqua
+
+    h1~p {
+      color: aqua
     }
+
     .container {
-    width: 960px;
-    margin : 0 auto;
-  }
-  .navi{
-    width:960px;
-    height:60px;
-    padding-bottom:10px;
-    border-bottom:2px solid #ccc;
-  }
-  .navi ol{
-    list-style: none;
-    padding-top:10px; 
-    padding-bottom:5px;
-  }
-  .navi ol li {
-    float: left;
-    width:150px;
-    padding:10px;   
-  }
-  .navi a:link, .navi a:visited{
-    display:block;
-    font-size:14px;
-    color:#000;
-    padding: 10px; 
-    text-decoration: none;  /* 밑줄 없앰 */
-    text-align: center;
-  }
-  .navi a:hover,  .navi a:focus {
-    background-color:#222;  /* 배경 색 */
-    color:#fff;  /* 글자 색 */
-  }
-  .navi a:active {
-    background-color:#f00;  /* 배경 색 */
-  }
-
-  #movex:hover {transform: translateX(50px);}
-  #movey:hover {transform: translatey(20px);}
-  #movexy:hover {transform: translate(10px, 20px);}
-
-
-
-  #container2 {
-				width:800px;
-				height:200px;
-				margin:20px auto;
-			}
-			.origin {
-				width: 100px;
-				height: 100px;
-				border: 1px solid black;
-				float: left;
-				margin: 40px;
-			}
-			.origin > div {				
-				width:100px;
-				height:100px;
-				background-color:purple;
-                transition-duration: 2s, 1s;
-			}
-
-            #box1 {
-                height: 100px;
-      background-color: #4cff00;
-      border: 1px solid transparent;
-      animation-name: shape;  /* 애니메이션 지정 */ ;
-      animation-duration: 3s;  /* 애니메이션 실행 시간 */
-      animation-iteration-count: infinite;  /* 애니메이션 무한 반복 */
-    }
-    #box2 {
-    height: 100px;
-      background-color: #8f06b0;
-      border: 1px solid transparent;
-      animation-name: rotate;  /* 애니메이션 지정 */
-      animation-duration: 3s;  /* 애니메이션 실행 시간 */
-      animation-iteration-count: infinite;  /* 애니메이션 무한 반복 */
-    } 
-
-    #container3{
-      width:500px;
-      margin:20px auto;
+      width: 960px;
+      margin: 0 auto;
     }
 
-            @keyframes shape { /* shape 애니메이션 정의 */
-      from {
-        border: 1px solid transparent;  /* 1px짜리 투명한 테두리 */
-      }
-      to {
-        border: 1px solid #000;  /* 검정색 테두리 */
-        border-radius: 50%;  /* 테두리를 둥글게 */
-      }
+    .navi {
+      width: 960px;
+      height: 60px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ccc;
     }
 
-    @keyframes rotate {  /* rotate 애니메이션 정의 */
-      from {
-        transform:rotate(0deg)  /* 시작은 0도에서 */
-      }
-      to {
-        transform: rotate(45deg);  /* 45도까지 회전 */
-      }
-    }		
+    .navi ol {
+      list-style: none;
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
 
-    .container4 {
-      width:700px;
-      display:flex; /* 플렉스 컨테이너 지정 */
-      background-color:#eee;
-      border:1px solid #222;
-      margin-bottom:30px;
-      height: 50px;
+    .navi ol li {
+      float: left;
+      width: 150px;
+      padding: 10px;
     }
-    .box3 {
-      padding:5px 45px;
-      margin:5px;   
-	  	width:80px;
-      background-color:#222;   
-    }
-    #opt1{
-      flex-direction: row;          /* 왼쪽에서 오른쪽으로 */ 
-    }
-    #opt2{
-      flex-direction: row-reverse;   /* 오른쪽에서 왼쪽으로 */
-    }
-    #opt3{
-      flex-direction: column;         /* 위에서 아래로 */
-    }
-    #opt4{
-      flex-direction: column-reverse;  /* 아래에서 위로 */
-    }             
-    #opt5{
-        flex-flow: row wrap;
-        justify-content: space-around;
-    }
-    .p {
-      color:#fff;
+
+    .navi a:link,
+    .navi a:visited {
+      display: block;
+      font-size: 14px;
+      color: #000;
+      padding: 10px;
+      text-decoration: none;
+      /* 밑줄 없앰 */
       text-align: center;
     }
 
-    *{margin: 0;
-    box-sizing: border-box;}
+    .navi a:hover,
+    .navi a:focus {
+      background-color: #222;
+      /* 배경 색 */
+      color: #fff;
+      /* 글자 색 */
+    }
+
+    .navi a:active {
+      background-color: #f00;
+      /* 배경 색 */
+    }
+
+    #movex:hover {
+      transform: translateX(50px);
+    }
+
+    #movey:hover {
+      transform: translatey(20px);
+    }
+
+    #movexy:hover {
+      transform: translate(10px, 20px);
+    }
+
+
+
+    #container2 {
+      width: 800px;
+      height: 200px;
+      margin: 20px auto;
+    }
+
+    .origin {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      float: left;
+      margin: 40px;
+    }
+
+    .origin>div {
+      width: 100px;
+      height: 100px;
+      background-color: purple;
+      transition-duration: 2s, 1s;
+    }
+
+    #box1 {
+      height: 100px;
+      background-color: #4cff00;
+      border: 1px solid transparent;
+      animation-name: shape;
+      /* 애니메이션 지정 */
+      ;
+      animation-duration: 3s;
+      /* 애니메이션 실행 시간 */
+      animation-iteration-count: infinite;
+      /* 애니메이션 무한 반복 */
+    }
+
+    #box2 {
+      height: 100px;
+      background-color: #8f06b0;
+      border: 1px solid transparent;
+      animation-name: rotate;
+      /* 애니메이션 지정 */
+      animation-duration: 3s;
+      /* 애니메이션 실행 시간 */
+      animation-iteration-count: infinite;
+      /* 애니메이션 무한 반복 */
+    }
+
+    #container3 {
+      width: 500px;
+      margin: 20px auto;
+    }
+
+    @keyframes shape {
+
+      /* shape 애니메이션 정의 */
+      from {
+        border: 1px solid transparent;
+        /* 1px짜리 투명한 테두리 */
+      }
+
+      to {
+        border: 1px solid #000;
+        /* 검정색 테두리 */
+        border-radius: 50%;
+        /* 테두리를 둥글게 */
+      }
+    }
+
+    @keyframes rotate {
+
+      /* rotate 애니메이션 정의 */
+      from {
+        transform: rotate(0deg)
+          /* 시작은 0도에서 */
+      }
+
+      to {
+        transform: rotate(45deg);
+        /* 45도까지 회전 */
+      }
+    }
+
+    .container4 {
+      width: 700px;
+      display: flex;
+      /* 플렉스 컨테이너 지정 */
+      background-color: #eee;
+      border: 1px solid #222;
+      margin-bottom: 30px;
+      height: 50px;
+    }
+
+    .box3 {
+      padding: 5px 45px;
+      margin: 5px;
+      width: 80px;
+      background-color: #222;
+    }
+
+    #opt1 {
+      flex-direction: row;
+      /* 왼쪽에서 오른쪽으로 */
+    }
+
+    #opt2 {
+      flex-direction: row-reverse;
+      /* 오른쪽에서 왼쪽으로 */
+    }
+
+    #opt3 {
+      flex-direction: column;
+      /* 위에서 아래로 */
+    }
+
+    #opt4 {
+      flex-direction: column-reverse;
+      /* 아래에서 위로 */
+    }
+
+    #opt5 {
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+
+    .p {
+      color: #fff;
+      text-align: center;
+    }
+
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
 
     button {
-      background-color:#ccc;
-      font-size: 1.2em; 
-      padding:1em 2em;
-      border:none;
-      border-radius:5px;    
-      box-shadow:1px 1px 2px #fff;  
+      background-color: #ccc;
+      font-size: 1.2em;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px #fff;
     }
-    body { text-align:center; }
-		#heading { color:blue; }
-		#text { 
-			color:gray;
-			font-size:15px;
-		}
-    </style>
+
+    body {
+      text-align: center;
+    }
+
+    #heading {
+      color: blue;
+    }
+
+    #text {
+      color: gray;
+      font-size: 15px;
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navi">
+  <nav class="navi">
     <ol>
-        <li><a href="1.html">HTML</a></li>
-        <li><a href="2.html">CSS</a></li>
-        <li><a href="3.html">JavaScript</a></li>
-        <li><a href="4_login.html">욱스타그램 로그인</a></li>
-        <li><a href="9.html">미니실습 1</a></li>
-        </ol>
-    </nav>
-        <section>
+      <li><a href="1.html">HTML</a></li>
+      <li><a href="2.html">CSS</a></li>
+      <li><a href="3.html">JavaScript</a></li>
+      <li><a href="4_login.html">욱스타그램 로그인</a></li>
+      <li><a href="9.html">미니실습 1</a></li>
+    </ol>
+  </nav>
+  <section>
     <h1>미니실습 10단원</h1>
     <p>부모 요소와 자식요소에 대해 알아보자</p>
     <div>
-        <p>h1 + p 인접 형제 선택자로, 요소 1번에만 적용한 모습.<br> h1 ~ p 형제 선택자로, 요소 1번에만 글자 색을 변경한모습.</p>
-        <p>상위 메뉴 변경.</p>
+      <p>h1 + p 인접 형제 선택자로, 요소 1번에만 적용한 모습.<br> h1 ~ p 형제 선택자로, 요소 1번에만 글자 색을 변경한모습.</p>
+      <p>상위 메뉴 변경.</p>
     </div>
-</section>
-    
-<h1>미니실습 11단원</h1>
-<div id="container2">
+  </section>
+
+  <h1>미니실습 11단원</h1>
+  <div id="container2">
     <div class="origin">
-        <div  id="movex"></div>		
-    </div>
-    <div class="origin">
-        <div id="movey"></div>	
+      <div id="movex"></div>
     </div>
     <div class="origin">
-        <div id="movexy"></div>		
+      <div id="movey"></div>
     </div>
-</div>
-</div>
-<div id="container3">
-    <p><div class="box" id="box1"></div></p>
-    <p> <div class="box" id="box2"></div></p>
-</div>
+    <div class="origin">
+      <div id="movexy"></div>
+    </div>
+  </div>
+  </div>
+  <div id="container3">
+    <p>
+    <div class="box" id="box1"></div>
+    </p>
+    <p>
+    <div class="box" id="box2"></div>
+    </p>
+  </div>
 
 
-<h1>미니실습 12단원</h1>
+  <h1>미니실습 12단원</h1>
 
-<div class="container4" id="opt1">
+  <div class="container4" id="opt1">
     <div class="box3"></div>
   </div>
   <div class="container4" id="opt2">
@@ -237,29 +313,30 @@
     <div class="box3"></div>
     <div class="box3"></div>
     <div class="box3"></div>
-   </div>
+  </div>
   <div class="container4" id="opt4">
     <div class="box3"></div>
     <div class="box3"></div>
     <div class="box3"></div>
-  </div>            
+  </div>
   <div class="container4" id="opt5">
     <div class="box3"></div>
     <div class="box3"></div>
     <div class="box3"></div>
- <div><button>클릭!</button></div>
+    <div><button>클릭!</button></div>
 
- <h1>미니실습 13단원</h1>
+    <h1>미니실습 13단원</h1>
 
- <script>
-    alert("ㅎㅇ");
-    var reply = confirm("식사는 하셨나요?");
-    var name = prompt("이름을 입력하세요.");
-    console.log(name + "님, 환영합니다.");
-    document.write("<b><big>" + name + "</big></b>님, 환영합니다.");
-    var now = new Date();
-		var display = now.toLocaleTimeString();
-		document.write("현재 시각은 " + display);	
-</script>
+    <script>
+      alert("ㅎㅇ");
+      var reply = confirm("식사는 하셨나요?");
+      var name = prompt("이름을 입력하세요.");
+      console.log(name + "님, 환영합니다.");
+      document.write("<b><big>" + name + "</big></b>님, 환영합니다.");
+      var now = new Date();
+      var display = now.toLocaleTimeString();
+      document.write("현재 시각은 " + display);	
+    </script>
 </body>
+
 </html>
