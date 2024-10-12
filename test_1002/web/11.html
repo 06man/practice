@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lunch.css">
+    <script src="lunchmenu.js" defer></script> <!-- 외부 JS 파일 연결 -->
+    <title>점심메뉴 추천</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#" onclick="changeBg('japan')">일식</a></li>
+        <li><a href="#" onclick="changeBg('chinese')">중식</a></li>
+        <li><a href="#" onclick="changeBg('korea')">한식</a></li>
+    </ul>
+    <div id="result" style="background-image: url('tendong.jpg');">
+        <div class="menu-info" id="menuinfo">
+            "텐동 ₩11000"<br>
+        </div>
+    </div>
+</body>
+</html>
