@@ -35,3 +35,23 @@ li {
     text-align: center;
 
 }
+
+#container {
+	width:500px;
+	margin: 20px auto;
+	padding:20px;
+}
+input[type="text"] {
+	width: 370px;
+	float: left;
+	height: 30px;
+	padding-left: 30px;
+}
+button {
+	width: 90px;
+	height: 35px;
+	float:right;
+	background: black;
+	color: azure;
+	border: none;
+}

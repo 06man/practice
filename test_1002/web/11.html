@@ -12,11 +12,23 @@
         <li><a href="#" onclick="changeBg('japan')">일식</a></li>
         <li><a href="#" onclick="changeBg('chinese')">중식</a></li>
         <li><a href="#" onclick="changeBg('korea')">한식</a></li>
+        <li><a href="#" onclick="changeBg()">랜덤</a></li>
     </ul>
     <div id="result" style="background-image: url('tendong.jpg');">
         <div class="menu-info" id="menuinfo">
             "텐동 ₩11000"<br>
         </div>
+    </div>
+
+    <div id="container">
+    <h1>먹고싶은 목록</h1>
+    <p>먹고싶은 음식을 적어주세요</p>
+    <form action="">
+         <input type="text" id="subject" autofocus>
+         <button onclick="newRegister(); return false">추가</button>
+    </form>
+    <hr>
+    <ul id="itemList"> </ul>
     </div>
 </body>
 </html>
