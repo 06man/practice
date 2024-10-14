@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="lunchmenu.js" defer></script> <!-- 외부 JS 파일 연결 -->
     <title>점심메뉴 추천</title>
 </head>
+
 <body>
     <ul>
         <li><a href="#" onclick="changeBg('japan')">일식</a></li>
@@ -21,14 +23,15 @@
     </div>
 
     <div id="container">
-    <h1>먹고싶은 목록</h1>
-    <p>먹고싶은 음식을 적어주세요</p>
-    <form action="">
-         <input type="text" id="subject" autofocus>
-         <button onclick="newRegister(); return false">추가</button>
-    </form>
-    <hr>
-    <ul id="itemList"> </ul>
+        <h1>먹고싶은 목록</h1>
+        <p>먹고싶은 음식을 적어주세요</p>
+        <form action="">
+            <input type="text" id="subject" autofocus>
+            <button onclick="newRegister(); return false">추가</button>
+        </form>
+        <hr>
+        <ul id="itemList"> </ul>
     </div>
 </body>
+
 </html>

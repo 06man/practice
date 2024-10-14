@@ -16,7 +16,7 @@ function changeBg(menu) {
         result.style.backgroundImage = "url('korean.jpg')"; // 한식 이미지
         menuInfo.innerHTML = '"비빔밥 ₩10000"'; // 한식 정보
     }
-    
+
 }
 function newRegister() {
     var newItem = document.createElement("li");
@@ -28,12 +28,12 @@ function newRegister() {
     var itemList = document.querySelector("#itemList");
     itemList.insertBefore(newItem, itemList.childNodes[0]);
 
-    subject.value="";
+    subject.value = "";
 
     var items = document.querySelectorAll(".lunchPick");
-    for(i=0; i<items.length; i++) {
-        items[i].addEventListener("click", function(){
-            if(this.parentNode)
+    for (i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+            if (this.parentNode)
                 this.parentNode.removeChild(this);
         });
     }
