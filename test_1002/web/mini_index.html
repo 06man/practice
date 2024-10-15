@@ -8,10 +8,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="header">
-        <button>상세페이지</button>
-        <button>로그인</button>
-        <button>회원가입</button>
+    <div class="container">
+
+        <!-- Header Section -->
+        <header>
+            <h1>With.dj</h1>
+            <div class="header-buttons">
+                <button onclick="showDetailPage()">상세페이지</button>
+                <button onclick="login()">로그인</button>
+                <button onclick="signup()">회원가입</button>
+            </div>
+        </header>
+
+        <!-- Login/Signup Section -->
+        <div class="auth-buttons">
+            <button onclick="login()">로그인</button>
+            <button onclick="signup()">회원가입</button>
+        </div>
+
+        <!-- Music List Section -->
+        <section class="music-list">
+            <div class="music-item">
+                <div class="music-info">
+                    <span class="music-title">노래 제목란</span>
+                    <span class="artist-name">가수 이름 기입란</span>
+                </div>
+                <div class="icons">
+                    <div class="play-icon"></div>
+                    <div class="menu-icon"></div>
+                </div>
+            </div>
+
+            <div class="music-item">
+                <div class="music-info">
+                    <span class="music-title">노래 제목란</span>
+                    <span class="artist-name">가수 이름 기입란</span>
+                </div>
+                <div class="icons">
+                    <div class="play-icon"></div>
+                    <div class="menu-icon"></div>
+                </div>
+            </div>
+
+            <div class="music-item">
+                <div class="music-info">
+                    <span class="music-title">노래 제목란</span>
+                    <span class="artist-name">가수 이름 기입란</span>
+                </div>
+                <div class="icons">
+                    <div class="play-icon"></div>
+                    <div class="menu-icon"></div>
+                </div>
+            </div>
+        </section>
+
     </div>
+
+    <script src="scripts.js"></script>
+
 </body>
 </html>

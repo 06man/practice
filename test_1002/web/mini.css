@@ -1,22 +1,120 @@
-/* Header */
-.header{
-box-sizing: border-box;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-align-content: flex-start;
-padding: 32px;
-gap: 0px 24px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
 
-position: absolute;
-width: 1440px;
-height: 78px;
-left: 0px;
-top: 0px;
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-background: #FFFFFF;
-border-bottom: 1px solid #D9D9D9;
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Login/Signup Section */
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.auth-buttons button {
+    margin: 0 10px;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Music List Section */
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.music-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.music-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.artist-name {
+    font-size: 1rem;
+    color: #888;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.play-icon, .menu-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .music-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-buttons button {
+        margin-left: 5px;
+        padding: 8px 15px;
+    }
+
+    .auth-buttons button {
+        padding: 12px 20px;
+    }
 }
