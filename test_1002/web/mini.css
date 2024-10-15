@@ -1,0 +1,22 @@
+/* Header */
+.header{
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+align-content: flex-start;
+padding: 32px;
+gap: 0px 24px;
+
+position: absolute;
+width: 1440px;
+height: 78px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+border-bottom: 1px solid #D9D9D9;
+}
