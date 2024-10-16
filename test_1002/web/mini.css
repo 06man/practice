@@ -4,21 +4,10 @@
     box-sizing: border-box;
 }
 
-  
-#nav1>a {
-    line-height: 80px;
-    display: block;
-    font-size: 30px;
-    background-color: #f5f5f5;
-    font-weight: 900;
-    position:absolute;
-    left: 30px;
-}
-
 
 #nav1>ul li {
     float: left;
-    line-height: 80px;
+    line-height: 50px;
     padding: 0 30px;
 }
 body {
