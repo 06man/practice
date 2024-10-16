@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +8,125 @@
     <link rel="stylesheet" href="mini.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="container">
 
-        <!-- Header Section -->
+
         <header>
-            <h1>With.dj</h1>
             <div class="header-buttons">
                 <button onclick="showDetailPage()">상세페이지</button>
-                <button onclick="login()">로그인</button>
-                <button onclick="signup()">회원가입</button>
+                <button onclick="goLogin()">로그인</button>
+                <button onclick="goSignup()">회원가입</button>
             </div>
         </header>
+        <div class="mainBorder">
+            <span class="mainBorderText">With.dj</span>
+            <div class="auth-buttons">
+                <button onclick="goLogin()">로그인</button>
+                <button onclick="goSignup()">회원가입</button>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="ProductInfoCard">
+                <img class="SongImage" src="song.png">
+                <div class="ProductInfoCardBody">
+                    <span class="music-title">노래 제목란</span>
+                    <span class="artist-name">가수 이름 기입란</span>
+                </div>
+            </div>
+            <div class="ProductInfoCard">
+                <img class="SongImage" src="song.png">
+                <div class="ProductInfoCardBody">
+                    <span class="music-title">노래 제목란</span>
+                    <span class="artist-name">가수 이름 기입란</span>
+                </div>
+            </div>
+            <section class="music-list">
+                <div class="music-item">
+                    <div class="music-info">
+                        <span class="music-title">노래 제목란</span>
+                        <span class="artist-name">가수 이름 기입란</span>
+                    </div>
+                </div>
 
-        <!-- Login/Signup Section -->
-        <div class="auth-buttons">
-            <button onclick="login()">로그인</button>
-            <button onclick="signup()">회원가입</button>
+                <div class="music-item">
+                    <div class="music-info">
+                        <span class="music-title">노래 제목란</span>
+                        <span class="artist-name">가수 이름 기입란</span>
+                    </div>
+                </div>
+                <div class="music-item">
+                    <div class="music-info">
+                        <span class="music-title">노래 제목란</span>
+                        <span class="artist-name">가수 이름 기입란</span>
+                    </div>
+                </div>
+
+
         </div>
 
-        <!-- Music List Section -->
-        <section class="music-list">
-            <div class="music-item">
-                <div class="music-info">
-                    <span class="music-title">노래 제목란</span>
-                    <span class="artist-name">가수 이름 기입란</span>
-                </div>
-                <div class="icons">
-                    <div class="play-icon"></div>
-                    <div class="menu-icon"></div>
-                </div>
-            </div>
-
-            <div class="music-item">
-                <div class="music-info">
-                    <span class="music-title">노래 제목란</span>
-                    <span class="artist-name">가수 이름 기입란</span>
-                </div>
-                <div class="icons">
-                    <div class="play-icon"></div>
-                    <div class="menu-icon"></div>
-                </div>
-            </div>
-
-            <div class="music-item">
-                <div class="music-info">
-                    <span class="music-title">노래 제목란</span>
-                    <span class="artist-name">가수 이름 기입란</span>
-                </div>
-                <div class="icons">
-                    <div class="play-icon"></div>
-                    <div class="menu-icon"></div>
-                </div>
-            </div>
         </section>
+        <div class="footer">
+            <div class="footerTitle">
+                <div class="footerListHeaderText1">
+                    <div class="footerHeaderText">
+                        상위 푸터 기입란
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footerTitle">
+                <div class="footerListHeaderText1">
+                    <div class="footerHeaderText">
+                        상위 푸터 기입란
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerTitle">
+                <div class="footerListHeaderText1">
+                    <div class="footerHeaderText">
+                        상위 푸터 기입란
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerTitle">
+                <div class="footerListHeaderText1">
+                    <div class="footerHeaderText">
+                        상위 푸터 기입란
+                    </div>
+                    <div class="footerListItem">
+                        <div class="ListItem"> 푸터 기입란</div>
+                    </div>
+
+        </div>
+    </div>
 
     </div>
 
     <script src="scripts.js"></script>
 
 </body>
+
 </html>

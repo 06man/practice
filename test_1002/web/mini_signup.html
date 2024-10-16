@@ -20,7 +20,7 @@
 
         </header>
         <img class="profileImage" src="profileIcon.webp">
-        <form onsubmit="return login(event)">
+        <form>
             <div class="formLogin">
                 <span class="label">이메일</span>
                 <input type="email" id="email" placeholder="이메일" required>
@@ -28,14 +28,16 @@
                 <input type="password" id="password" placeholder="비밀번호" required>
                 <div class="auth-buttons">
                     <span class="formButton">
-                        <button onclick="login()">로그인하기</button>
-                        <span class="formButton">
-                            <button onclick="goSignup()">회원가입</button>
-                            <button onclick="goIndex()">메인 페이지</button>
-                        </span>
+                        <button class="fromButton" onclick="signup()">회원가입완료</button>
+                        <button class="fromButton" onclick="goIndex()">메인 페이지</button>
+                    </span>
                 </div>
+            </div>
         </form>
+
+
     </div>
+
 
     <script src="scripts.js"></script>
 </body>
